@@ -1,5 +1,7 @@
 {
   "name": "PushManga",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
