@@ -24,7 +24,7 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.styleLightContent();
       this.splashScreen.hide();
       if (isCordovaAvailable()) {
         this.oneSignal.startInit(oneSignalAppId, sender_id);

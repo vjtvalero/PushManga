@@ -12,8 +12,8 @@ export class HomePage implements AfterViewInit {
   selectedManga = '';
   selectedPage = 'latest';
 
-  // baseUrl = 'https://push-manga.herokuapp.com';
-  baseUrl = 'http://localhost:4000';
+  baseUrl = 'https://push-manga.herokuapp.com';
+  // baseUrl = 'http://localhost:4000';
   baseMangaUrl = 'https://readms.net';
 
   mangas = [];
