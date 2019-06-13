@@ -13,6 +13,7 @@ export class HomePage implements AfterViewInit {
   selectedPage = 'latest';
 
   baseUrl = 'https://push-manga.herokuapp.com';
+  newBaseUrl = 'https://viayensii.website/push-manga/api';
   // baseUrl = 'http://localhost:4000';
   baseMangaUrl = 'https://readms.net';
 
@@ -27,11 +28,11 @@ export class HomePage implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    this.http.get(`${this.baseUrl}/manga/mangas`).subscribe((response: any) => {
+    this.http.get(`${this.newBaseUrl}/mangas.php`).subscribe((response: any) => {
       this.mangas = response;
     });
 
-    this.http.get(`${this.baseUrl}/manga/latest`).subscribe((response: any) => {
+    this.http.get(`${this.newBaseUrl}/latest.php`).subscribe((response: any) => {
       this.latest = response;
       this.latest.forEach((c) => {
         this.getThumbnail(c);

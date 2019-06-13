@@ -23,13 +23,13 @@
     <div *ngIf="selectedPage == 'latest'">
       <ion-list>
         <ion-item *ngFor="let ch of latest" (click)="openChapter(ch.url)">
-          <ion-badge slot="end" [color]="ch.released == 'Today' ? 'dark' : 'transparent'">{{ ch.released }}</ion-badge>
+          <ion-badge slot="end" [color]="ch.releaseDate == 'Today' ? 'dark' : 'transparent'">{{ ch.releaseDate }}</ion-badge>
           <ion-thumbnail slot="start">
             <img src="{{ ch.thumbnail }}">
           </ion-thumbnail>
           <ion-label>
-            <h2>{{ ch.mangaName }} <strong>{{ ch.chapterNumber }}</strong></h2>
-            <ion-note>{{ ch.chapterName }}</ion-note>
+            <h2>{{ ch.mangaTitle }} <strong>{{ ch.chapterNumber }}</strong></h2>
+            <ion-note>{{ ch.chapterTitle }}</ion-note>
           </ion-label>
         </ion-item>
       </ion-list>
@@ -41,7 +41,7 @@
         <ion-list>
           <ion-item *ngFor="let mg of mangas" (click)="selectManga(mg.url)">
             <ion-label>
-              <h2><strong>{{ mg.name }}</strong></h2>
+              <h2><strong>{{ mg.mangaTitle }}</strong></h2>
             </ion-label>
           </ion-item>
         </ion-list>
@@ -61,8 +61,8 @@
               <img src="{{ ch.thumbnail }}">
             </ion-thumbnail>
             <ion-label>
-              <h2>{{ ch.name }}</h2>
-              <ion-note>{{ ch.released }}</ion-note>
+              <h2>{{ ch.chapterTitle }}</h2>
+              <ion-note>{{ ch.releaseDate }}</ion-note>
             </ion-label>
           </ion-item>
         </ion-list>
