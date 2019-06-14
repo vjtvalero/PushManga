@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.vjtvalero.pushmanga" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.vjtvalero.pushmanga" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PushManga</name>
-    <description>Notification app for Manga Stream</description>
-    <author email="vjtvalero@gmail.com" href="http://ionicframework.com/">VJTValero</author>
+    <description>Manga release alerter</description>
+    <author email="vjtvalero@gmail.com" href="#">VJTValero</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
