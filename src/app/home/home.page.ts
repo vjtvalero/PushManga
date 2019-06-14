@@ -21,6 +21,8 @@ export class HomePage implements AfterViewInit {
   chapters = [];
   latest = [];
 
+  mangasResult = [];
+
   constructor(
     private http: HttpClient,
     private iab: InAppBrowser,
@@ -30,6 +32,7 @@ export class HomePage implements AfterViewInit {
   ngAfterViewInit() {
     this.http.get(`${this.newBaseUrl}/mangas.php`).subscribe((response: any) => {
       this.mangas = response;
+      this.mangasResult = response;
     });
 
     this.http.get(`${this.newBaseUrl}/latest.php`).subscribe((response: any) => {
@@ -67,5 +70,17 @@ export class HomePage implements AfterViewInit {
     ).subscribe((response: any) => {
       chapter.thumbnail = response;
     });
+  }
+
+  searchManga(e: any) {
+    let keyword: string = e.detail.value;
+
+    if (!keyword || keyword == '') {
+      this.mangasResult = this.mangas;
+    } else {
+      this.mangasResult = this.mangas.filter(m => {
+        return m.mangaTitle.toLowerCase().includes(keyword.toLowerCase());
+      });
+    }
   }
 }

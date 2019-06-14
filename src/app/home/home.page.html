@@ -38,8 +38,13 @@
     <div *ngIf="selectedPage == 'all'">
       <!-- manga list -->
       <div *ngIf="selectedManga === ''; else chapterList">
+        <ion-searchbar
+          animated="true"
+          clear-icon="close"
+          debounce="1000"
+          (ionChange)="searchManga($event)"></ion-searchbar>
         <ion-list>
-          <ion-item *ngFor="let mg of mangas" (click)="selectManga(mg.url)">
+          <ion-item *ngFor="let mg of mangasResult" (click)="selectManga(mg.url)">
             <ion-label>
               <h2><strong>{{ mg.mangaTitle }}</strong></h2>
             </ion-label>
